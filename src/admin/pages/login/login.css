@@ -1,0 +1,18 @@
+.login-head{
+    margin-bottom: 30px;
+    font-size: xx-large;
+}
+
+.inputs{
+    margin-top: 1px;
+    width: 360px;
+}
+
+.image{
+    width: 700px;
+    background-repeat: no-repeat;
+    margin-top: 100px;
+    margin-left: 70px;
+    justify-content: center;
+    justify-items: center;
+}

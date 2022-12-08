@@ -1,0 +1,97 @@
+.datatableTitle-setting {
+  width: 100%;
+  font-size: 24px;
+  color: gray;
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account-info {
+  display: flex;
+  flex-direction: column;
+ box-shadow: 3px 3px 4px 6px rgb(238, 235, 235);
+  width: 40%;
+  height: auto;
+  align-items: center;
+}
+
+.account {
+  display: flex;
+  justify-content: center;
+}
+.content-setting {
+  padding: 20px 20px;
+  align-items: center;
+  height: auto;
+  width: 90%;
+}
+.content-info {
+  background-origin: 20px solid yellow;
+  margin-bottom: 20px;
+}
+.bank,
+.easypaisa,
+.jazzcash {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+.heading {
+  font-size: 20px;
+}
+.sub-content p{
+  font-size: 11px;
+  color: black;
+  line-height: 1;
+}
+.end-list {
+  border: 1px solid rgb(228, 219, 219);
+  width: 95%;
+}
+
+.acitve {
+  display: none;
+}
+.inactive {
+  visibility: hidden;
+  height: 0px;
+}
+.wrapper-info {
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(226, 230, 226);
+  box-shadow: 3px 3px 10px 6px rgb(221, 220, 220);
+}
+.form-content {
+  padding: 20px;
+  width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+input {
+  margin-bottom: 10px;
+  border: none;
+  background-color: rgb(230, 227, 227);
+  padding: 8px;
+}
+button {
+  padding: 10px;
+  background-color: orange;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+.submit-button {
+  margin-left: auto;
+  margin-right: 0;
+}
