@@ -11,11 +11,10 @@ import HistroyVendors from "../admin/components/datatable/HistorytableVendors";
 import HistroyUsers from "../admin/components/datatable/HistorytableUsers";
 import Invoice from "../admin/pages/invoice/invoice";
 import Home from "../admin/pages/home/Home";
-import Login from "../admin/pages/login/Login";
 import Vendors from "../admin/pages/list/Vendors";
 import New from "../admin/pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { vendorsInputs, userInputs, vendorsUpdate } from "../admin/formSource";
+import { vendorsInputs, vendorsUpdate } from "../admin/formSource";
 import ContactForm from "../admin/pages/contact/ContactForm";
 import SingleUser from "../admin/pages/single/SingleUser";
 import SingleVendor from "../admin/pages/single/SingleVendor";
@@ -27,7 +26,7 @@ function Adminroutes() {
         <Routes>
           <Route path="/">
             <Route path="/admindashboard" element={<Home />} />
-            <Route path="login" element={<Login />} />
+            {/* <Route path="/Login" element={<Login />} /> */}
             <Route path="vendors">
               <Route index element={<Vendors />} />
               <Route path=":vendorId" element={<SingleVendor />} />

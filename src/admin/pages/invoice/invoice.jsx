@@ -3,7 +3,6 @@ import "./invoice.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Popup from "./popup";
-import { render } from "react-dom";
 import { useState } from "react";
 
 const data = [
@@ -21,7 +20,7 @@ function printReceipt() {
 
 const Invoice = () => {
   const [buttonPopup, setbuttonPopup] = useState(false);
-  const [file, setFile] = useState();
+  const [setFile] = useState();
   function handleChange(e) {
     setFile(URL.createObjectURL(e.target.files[0]));
   }

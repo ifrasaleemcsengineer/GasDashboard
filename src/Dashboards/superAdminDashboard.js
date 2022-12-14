@@ -1,5 +1,5 @@
 import React from "react";
-import Superadminroutes from "./routes/superAdminroutes";
+import Superadminroutes from "../routes/superAdminroutes";
 
 function SuperadminDashboard() {
   return (

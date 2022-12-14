@@ -64,8 +64,8 @@ const MyHistoryTable = () => {
             <TableCell className="tableCell">Device Name</TableCell>
             <TableCell className="tableCell">No of Devices</TableCell>
             <TableCell className="tableCell">Weight</TableCell>
-            <TableCell className="tableCell">Date</TableCell>
             <TableCell className="tableCell">Amount</TableCell>
+            <TableCell className="tableCell">Date</TableCell>
             <TableCell className="tableCell">Status</TableCell>
           </TableRow>
         </TableHead>
