@@ -15,7 +15,7 @@ import AdminHistory from "../SuperAdmin/pages/single/AdminHistory";
 import VendorHistory from "../SuperAdmin/pages/single/VendorHistory";
 import UserHistory from "../SuperAdmin/pages/single/UserHistory";
 import Invoice from "../SuperAdmin/pages/invoice/invoice";
-import MyAccount from "../SuperAdmin/pages/MyAccount/Myaccount";
+import MyAccountDetails from "../SuperAdmin/pages/MyAccount/MyAccountDetails";
 import PaymentRequest from "../SuperAdmin/pages/payment-req/Payment-Request";
 import PrivacyPolicy from "../SuperAdmin/pages/settingsInfo/PrivacyPolicy"
 import TermsConditions from "../SuperAdmin/pages/settingsInfo/Terms&Conditions"
@@ -115,7 +115,7 @@ function Superadminroutes() {
               
             </Route>
             <Route path="Myaccount">
-              <Route index element={<MyAccount />} />
+              <Route index element={<MyAccountDetails />} />
                {/* <Route path=":userId" element={<SingleHistory />} />  */}
               
             </Route>

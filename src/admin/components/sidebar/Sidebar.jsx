@@ -1,8 +1,6 @@
 import "./sidebar.scss";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import PaymentIcon from "@mui/icons-material/Payment";
 import HistoryIcon from "@mui/icons-material/History";
@@ -11,15 +9,13 @@ import PolicyIcon from "@mui/icons-material/Policy";
 import GavelIcon from "@mui/icons-material/Gavel";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
-import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react";
+
 
 const Sidebar = () => {
-  const { dispatch } = useContext(DarkModeContext);
   return (
     <div className="sidebar">
       <div className="admintop">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/admindashboard" style={{ textDecoration: "none" }}>
           <span className="logo">Gas Cylinder</span>
         </Link>
       </div>
@@ -27,7 +23,7 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/admindashboard" style={{ textDecoration: "none" }}>
             <li>
               <DashboardIcon className="icon" />
               <span>Dashboard</span>

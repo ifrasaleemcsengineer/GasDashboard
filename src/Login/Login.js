@@ -19,7 +19,7 @@ function Login() {
     <div>
       <div class="d-lg-flex half">
         <div class="bg order-1 order-md-2">
-            <img style={{width: "550px" , marginLeft: "120px", marginTop: "70px"}}src={logo}/>
+            <img style={{width: "550px" , marginLeft: "120px", marginTop: "100px"}}src={logo} alt="logo" />
            
             </div>
         <div class="contents order-2 order-md-1">

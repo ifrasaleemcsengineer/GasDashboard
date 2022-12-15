@@ -1,6 +1,6 @@
 import React from "react";
 import Users from "../admin/pages/list/Users";
-import MyAccount from "../admin/pages/MyAccount/Myaccount";
+import MyAccountDetails from "../admin/pages/MyAccount/MyAccountDetails";
 import PrivacyPolicy from "../admin/pages/settingsInfo/PrivacyPolicy";
 import TermsConditions from "../admin/pages/settingsInfo/Terms&Conditions";
 import VendorsHistory from "../admin/pages/History/vendors_history";
@@ -69,7 +69,7 @@ function Adminroutes() {
               <Route index element={<PaymentRequest />} />
             </Route>
             <Route path="my-account">
-              <Route index element={<MyAccount />} />
+              <Route index element={<MyAccountDetails />} />
             </Route>
             <Route path="invoice">
               <Route index element={<Invoice />} />
