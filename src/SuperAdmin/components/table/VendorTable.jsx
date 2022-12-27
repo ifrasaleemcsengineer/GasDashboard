@@ -6,55 +6,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useState } from "react";
 
 const VendorTable = () => {
-  const rows = [
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-  ];
+  const [VendorHistoryView, setVendorHistoryView] = useState([])
   return (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -70,7 +25,7 @@ const VendorTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {VendorHistoryView.map((row) => (
             <TableRow key={row.deviceId}>
               <TableCell className="tableCell">{row.deviceId}</TableCell>
               <TableCell className="tableCell">{row.name}</TableCell>

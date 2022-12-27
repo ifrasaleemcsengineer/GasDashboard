@@ -1,9 +1,9 @@
 import "./new.scss";
-import Sidebar from "../../components/supersidebar/Sidebar";
+import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import { useState } from "react";
 
-const New = ({ title }) => {
+const NewDevice = ({ title }) => {
   const [setFile] = useState("");
 
   return (
@@ -17,7 +17,7 @@ const New = ({ title }) => {
         <div className="bottom">
           <div className="right">
             <form className="form-new">
-              <div className="formInput">
+              <div className="formInputs">
                 <input
                   type="file"
                   id="file"
@@ -27,15 +27,12 @@ const New = ({ title }) => {
               </div>
 
              
-                <div className="formInputs" >
-                  <label>Name</label>
-                  <input type="text" placeholder="Ifra" />
-                  <label style={{marginTop: "50px"}}className="labels">Password</label>
-                  <input type="email" placeholder="123" />
-                  <label style={{marginTop: "50px"}}className="labels">No of Devices</label>
-                  <input type="number" placeholder="22" />
-                  {/* <label className="labels">DeiveId</label>
-                  <input type="text" placeholder="1212234" multiple/> */}
+                <div className="formInput" >
+                  <label>Device ID</label>
+                  <input type="text" />
+                  <label style={{marginTop: "50px"}}className="labels">Device Amount</label>
+                  <input type="text" />
+                  
              
               <button style={{marginTop: "30px" , marginLeft:"150px"}}className="createButton">Create</button>
                 </div>
@@ -47,4 +44,4 @@ const New = ({ title }) => {
   );
 };
 
-export default New;
+export default NewDevice;

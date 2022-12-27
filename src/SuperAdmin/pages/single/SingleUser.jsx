@@ -1,20 +1,18 @@
 import "./single.scss";
 import Sidebar from "../../components/supersidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import Chart from "../../components/chart/Chart";
-import List from "../../components/table/Table";
 import avatar from "./avatar.jpg";
+import { useState } from "react";
 
 const SingleUser = () => {
-  const data = [
-    { ID: "1", Weight: "2 Kg"},
-    { ID: "1", Weight: "2 Kg"},
-    { ID: "1", Weight: "2 Kg"},
-    { ID: "1", Weight: "2 Kg"},
-    { ID: "1", Weight: "2 Kg"},
-    
-   
-]
+  const [userView, setuserView] = useState([])
+//   const data = [
+//     { ID: "1", Weight: "2 Kg"},
+//     { ID: "1", Weight: "2 Kg"},
+//     { ID: "1", Weight: "2 Kg"},
+//     { ID: "1", Weight: "2 Kg"},
+//     { ID: "1", Weight: "2 Kg"},  
+// ]
   return (
     <div className="single">
       <Sidebar />
@@ -64,7 +62,7 @@ const SingleUser = () => {
                 <th>Weight</th>
                 
             </tr>
-            {data.map((val, key) => {
+            {userView.map((val, key) => {
                 return(
                     <tr key={key}>
                         <td>{val.ID}</td>

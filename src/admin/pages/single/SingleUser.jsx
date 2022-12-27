@@ -2,15 +2,17 @@ import "./single.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import avatar from "./avatar.jpg";
+import { useState } from "react";
 
 const SingleUser = () => {
-  const data = [
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-  ];
+  const [UserView, setUserView] = useState([])
+  // const data = [
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  // ];
   return (
     <div className="single">
       <Sidebar />
@@ -48,7 +50,7 @@ const SingleUser = () => {
                     <th>Device ID</th>
                     <th>Weight</th>
                   </tr>
-                  {data.map((val, key) => {
+                  {UserView.map((val, key) => {
                     return (
                       <tr key={key}>
                         <td>{val.ID}</td>

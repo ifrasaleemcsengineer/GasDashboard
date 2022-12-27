@@ -1,15 +1,38 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userhistoryColumns, userhistoryRows } from "../../historytablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const HistoryUsers = () => {
-  const [data, setData] = useState(userhistoryRows);
+const userhistoryColumns = [
+  { field: "id", headerName: "UserID", width: 150 },
+  { field: "Vendorid", headerName: "VendorID", width: 150 },
+  {
+    field: "user",
+    headerName: "Name",
+    width: 230,
+    renderCell: (params) => {
+      return <div className="cellWithImg">{params.row.username}</div>;
+    },
+  },
+  // {
+  //   field: "email",
+  //   headerName: "Email",
+  //   width: 230,
+  // },
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+  {
+    field: "age",
+    headerName: "No of Devices",
+    width: 150,
+  },
+];
+
+const HistoryUsers = () => {
+  const [userHistory, setuserHistory] = useState([]);
+
+  // const handleDelete = (id) => {
+  //   setData(data.filter((item) => item.id !== id));
+  // };
 
   const actionColumn = [
     {
@@ -24,7 +47,7 @@ const HistoryUsers = () => {
             </Link>
             <div
               className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
+              // onClick={() => handleDelete(params.row.id)}
             >
               Delete
             </div>
@@ -41,7 +64,7 @@ const HistoryUsers = () => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={data}
+        rows={userHistory}
         columns={userhistoryColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}

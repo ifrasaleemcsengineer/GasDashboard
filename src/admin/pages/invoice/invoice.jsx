@@ -5,11 +5,6 @@ import Navbar from "../../components/navbar/Navbar";
 import Popup from "./popup";
 import { useState } from "react";
 
-const data = [
-  { ID: "1", Quantity: "2", Amount: "10$" },
-  { ID: "1", Quantity: "2", Amount: "10$" },
-  { ID: "1", Quantity: "2", Amount: "10$" },
-];
 
 // import { Col, Divider, Row, Table } from 'antd';
 // import 'antd/dist/antd.css';
@@ -20,6 +15,7 @@ function printReceipt() {
 
 const Invoice = () => {
   const [buttonPopup, setbuttonPopup] = useState(false);
+  const [data, setData] = useState([])
   const [setFile] = useState();
   function handleChange(e) {
     setFile(URL.createObjectURL(e.target.files[0]));

@@ -67,6 +67,8 @@ th{
     /* border-bottom: 1px solid black; */
     background-color: gainsboro;
     text-align: center;
+    
+
 }
 
 
@@ -76,7 +78,7 @@ td{
 }
 .total{
     float: right;
-    background-color: gainsboro;
+    background-color: rgb(255, 205, 111);
     width: 900px;
     height: 110px;
 

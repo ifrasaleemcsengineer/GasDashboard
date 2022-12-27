@@ -1,15 +1,8 @@
 import React from "react";
 import Sidebar from "../../components/supersidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import {
-  unApproveColumns,
-  unApproveRows,
-  approveColumns,
-  approveRows,
-} from "./payment-data";
 import "./Payment-Request.css";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -18,12 +11,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { TableFooter } from "@mui/material";
 import ImgPopup from "./imgPopup";
 
 function PaymentRequest() {
-  const [unApprovedata, setUnApproveData] = useState(unApproveRows);
-  const [approvedata, setapproveData] = useState(approveRows);
+  const [unApprovedata, setUnApproveData] = useState([]);
+  const [approvedata, setapproveData] = useState([]);
 
   const [showSnapShotTrigger, setshowSnapShotTrigger] = useState(false);
 
@@ -71,7 +63,7 @@ function PaymentRequest() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {unApproveRows.map((row) => (
+                {unApprovedata.map((row) => (
                   <TableRow key={row.vendorId}>
                     <TableCell className="tableCell">{row.vendorId}</TableCell>
                     <TableCell className="tableCell">
@@ -127,7 +119,7 @@ function PaymentRequest() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {approveRows.map((row) => (
+                {approvedata.map((row) => (
                   <TableRow key={row.vendorId}>
                     <TableCell className="tableCell">{row.vendorId}</TableCell>
                     <TableCell className="tableCell">

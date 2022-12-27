@@ -1,78 +1,82 @@
 import "./widget.scss";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import GasMeterIcon from '@mui/icons-material/GasMeter';
+import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import { useState } from "react";
+
 const Widget = ({ type }) => {
+const [deviceCount , setDeviceCount] = useState(100)
+const [vendorCount , setVendorCount] = useState(200)
+const [userCount , setUserCount] = useState(300)
+
   let data;
 
   //temporary
-  const amount = 100;
-  // const diff = 20;
 
   switch (type) {
+   
     case "vendor":
       data = {
         title: "TOTAL VENDORS",
-        isMoney: false,
-        // link: "See all users",
-        icon: (
-          <PersonOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "white",
-              color: "orange",
-            
-            }}
-          />
-        ),
+        count: vendorCount, 
+        // link: "View all orders",
+        // icon: (
+        //   <ShoppingCartOutlinedIcon
+        //     className="icon"
+        //     style={{
+        //       backgroundColor: "rgba(218, 165, 32, 0.2)",
+        //       color: "goldenrod",
+        //     }}
+        //   />
+        // ),
       };
       break;
     case "user":
       data = {
         title: "TOTAL USERS",
-        isMoney: false,
-        // link: "View all orders",
-        icon: (
-          <PersonOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "white",
-              color: "orange",
-            }}
-          />
-        ),
+        count: userCount, 
+        // link: "View net earnings",
+        //   icon: (
+        //     <MonetizationOnOutlinedIcon
+        //       className="icon"
+        //       style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
+        //     />
+        //   ),
       };
       break;
+   
     case "devices":
       data = {
         title: "TOTAL DEVICES",
-        isMoney: false,
-        // link: "View all orders",
-        icon: (
-          <GasMeterIcon
-            className="icon"
-            style={{
-              backgroundColor: "white",
-              color: "orange",
-            }}
-          />
-        ),
+        count: deviceCount, 
+        // link: "View net earnings",
+        //   icon: (
+        //     <MonetizationOnOutlinedIcon
+        //       className="icon"
+        //       style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
+        //     />
+        //   ),
       };
       break;
-    default:
-      break;
+   
   }
 
   return (
     <div className="widget">
-      <div className="left">{data.icon}</div>
-      
-        <div className="right">
-          <span className="title">{data.title}</span>
-          <span className="counter">
-            {data.isMoney && "$"} {amount}
-          </span>
-        </div>
+      <div className="left">
+        <span className="title">{data.title}</span>
+        <span className="counter">{data.count}</span>
       </div>
+      <div className="right">
+        <div className="percentage positive">
+          {/* <KeyboardArrowUpIcon /> */}
+          {/* {diff} % */}
+        </div>
+        {data.icon}
+      </div>
+    </div>
   );
 };
 

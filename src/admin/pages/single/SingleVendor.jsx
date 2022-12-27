@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./single.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import avatar from "./avatar.jpg";
 
 function SingleVendor() {
-  const data = [
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-    { ID: "1", Weight: "2 Kg" },
-  ];
+  const [VendorView, setVendorView] = useState([])
+  // const data = [
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  //   { ID: "1", Weight: "2 Kg" },
+  // ];
   return (
     <div className="single">
       <Sidebar />
@@ -49,7 +50,7 @@ function SingleVendor() {
                     <th>Device ID</th>
                     <th>Weight</th>
                   </tr>
-                  {data.map((val, key) => {
+                  {VendorView.map((val, key) => {
                     return (
                       <tr key={key}>
                         <td>{val.ID}</td>

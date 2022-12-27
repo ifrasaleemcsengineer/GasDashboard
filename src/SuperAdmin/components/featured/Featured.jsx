@@ -4,8 +4,10 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
+import { useState } from "react";
 
 const Featured = () => {
+  const [profit,setProfit] = useState("50 %")
   return (
     <div className="featured">
       <div className="top">
@@ -16,7 +18,7 @@ const Featured = () => {
         <div className="featuredChart" style={{width: "300px", height: "300px"}}>
           <CircularProgressbar
             value={70}
-            text={"70%"}
+            text={profit}
             strokeWidth={5}
             styles={buildStyles({
               textColor: "orange",

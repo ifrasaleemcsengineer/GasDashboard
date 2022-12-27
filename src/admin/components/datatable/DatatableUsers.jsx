@@ -1,22 +1,26 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../config.js";
 
 const DatatableUsers = () => {
   const [users, setUsers] = useState([]);
-  const userCollection = collection(db, "users");
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(userCollection);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getUsers();
-  }, []);
+  const userColumns = [
+    { field: "userId", headerName: "UserID", width: 190 },
+    { field: "vendorid", headerName: "VendorID", width: 190 },
+    {
+      field: "name",
+      headerName: "Name",
+      width: 280,
+    },
+
+    {
+      field: "noOfDevices",
+      headerName: "No of Devices",
+      width: 160,
+    },
+  ];
 
   const actionColumn = [
     {

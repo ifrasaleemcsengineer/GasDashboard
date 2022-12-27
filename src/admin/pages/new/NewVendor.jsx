@@ -1,9 +1,9 @@
 import "./new.scss";
-import Sidebar from "../../components/supersidebar/Sidebar";
+import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import { useState } from "react";
 
-const New = ({ title }) => {
+const NewVendor = ({ title }) => {
   const [setFile] = useState("");
 
   return (
@@ -29,11 +29,11 @@ const New = ({ title }) => {
              
                 <div className="formInputs" >
                   <label>Name</label>
-                  <input type="text" placeholder="Ifra" />
+                  <input type="text" />
                   <label style={{marginTop: "50px"}}className="labels">Password</label>
-                  <input type="email" placeholder="123" />
+                  <input type="email" />
                   <label style={{marginTop: "50px"}}className="labels">No of Devices</label>
-                  <input type="number" placeholder="22" />
+                  <input type="number" />
                   {/* <label className="labels">DeiveId</label>
                   <input type="text" placeholder="1212234" multiple/> */}
              
@@ -47,4 +47,4 @@ const New = ({ title }) => {
   );
 };
 
-export default New;
+export default NewVendor;

@@ -3,28 +3,39 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const DatatableVendors = () => {
-  const [vendors, setVendors] = useState([]);
+const DatatableDevices = () => {
+  const [device, setDevice] = useState([]);
 
   const handleDelete = (id) => {
-    setVendors(vendors.filter((item) => item.id !== id));
+    setDevice(device.filter((item) => item.id !== id));
   };
 
-   const vendorColumns = [
-    { field: "id", headerName: "VendorID", width: 190 },
+  const deviceColumns = [
+    { field: "id", headerName: "DeviceID", width: 150 },
+    { field: "battery", headerName: "Battery", width: 150 },
     {
-      field: "user",
-      headerName: "Name",
-      width: 280,
+      field: "weight",
+      headerName: "Weight",
+      width: 230,
       renderCell: (params) => {
         return <div className="cellWithImg">{params.row.username}</div>;
       },
     },
-  
+    // {
+    //   field: "email",
+    //   headerName: "Email",
+    //   width: 230,
+    // },
+
     {
-      field: "age",
-      headerName: "No of Devices",
-      width: 200,
+      field: "status",
+      headerName: "Status",
+      width: 150,
+    },
+    {
+      field: "assignedTo",
+      headerName: "Assignedf to",
+      width: 150,
     },
   ];
 
@@ -32,14 +43,11 @@ const DatatableVendors = () => {
     {
       field: "action",
       headerName: "Action",
-      width: 400,
+      width: 350,
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/vendors/view-more" style={{ textDecoration: "none" }}>
-              <div className="viewButton">View More</div>
-            </Link>
-            <Link to="/vendors/update" style={{ textDecoration: "none" }}>
+            <Link to="/devices/update" style={{ textDecoration: "none" }}>
               <div className="viewButton">Update</div>
             </Link>
             <div
@@ -56,15 +64,15 @@ const DatatableVendors = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New Vendors
-        <Link to="/vendors/new" className="link-new">
+        Devices
+        <Link to="/devices/new" className="link">
           Add New
         </Link>
       </div>
       <DataGrid
         className="datagrid"
-        rows={vendors}
-        columns={vendorColumns.concat(actionColumn)}
+        rows={device}
+        columns={deviceColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
       />
@@ -72,4 +80,4 @@ const DatatableVendors = () => {
   );
 };
 
-export default DatatableVendors;
+export default DatatableDevices;

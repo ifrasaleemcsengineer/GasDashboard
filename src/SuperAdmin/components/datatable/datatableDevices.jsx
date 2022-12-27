@@ -3,29 +3,40 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const AdminColumns = [
-  { field: "id", headerName: "AdminID", width: 150 },
+const DeviceColumns = [
+  { field: "id", headerName: "DeviceID", width: 150 },
   {
-    field: "user",
-    headerName: "Name",
+    field: "Battery",
+    headerName: "Battery",
     width: 230,
-    renderCell: (params) => {
-      return <div className="cellWithImg">{params.row.username}</div>;
-    },
+    
   },
   
   {
-    field: "age",
-    headerName: "No of Devices",
+    field: "Weight",
+    headerName: "Weight",
     width: 150,
   },
+
+  {
+    field: "Status",
+    headerName: "Status",
+    width: 150,
+  },
+  {
+    field: "Assigned",
+    headerName: "Assigned to",
+    width: 150,
+  },
+  
 ];
 
-const DatatableAdmins = () => {
-  const [Admins, setAdmins] = useState([]);
+const DatatableDevices = () => {
+
+  const [Devices, setDevices] = useState([]);
 
   // const handleDelete = (id) => {
-  //   setData(data.filter((item) => item.id !== id));
+  //   setDevices(Devices.filter((item) => item.id !== id));
   // };
 
   const actionColumn = [
@@ -37,7 +48,7 @@ const DatatableAdmins = () => {
         return (
           
           <div className="cellAction">
-            <Link to="/admin/update" style={{ textDecoration: "none" }}>
+            <Link to="/devices/update" style={{ textDecoration: "none" }}>
               <div className="viewButton">Update</div>
             </Link>
             <div
@@ -47,9 +58,7 @@ const DatatableAdmins = () => {
               Delete
             </div>
             
-            <Link to="/admin/test" style={{ textDecoration: "none"}}>
-              <div className="viewButton">View more</div>
-            </Link>
+            
             
           </div>
         );
@@ -59,15 +68,15 @@ const DatatableAdmins = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-       Admins
-        <Link to="/admin/new" className="link">
+       Devices
+        <Link to="/devices/new" className="link">
           Add New
         </Link>
       </div>
       <DataGrid
         className="datagrid"
-        rows={Admins}
-        columns={AdminColumns.concat(actionColumn)}
+        rows={Devices}
+        columns={DeviceColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
       />
@@ -75,4 +84,4 @@ const DatatableAdmins = () => {
   );
 };
 
-export default DatatableAdmins;
+export default DatatableDevices;

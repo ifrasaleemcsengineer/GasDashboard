@@ -1,15 +1,38 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { VendorColumns, VendorRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const DatatableVendors = () => {
-  const [data, setData] = useState(VendorRows);
+const VendorColumns = [
+  { field: "id", headerName: "VendorID", width: 150 },
+  { field: "Adminid", headerName: "AdminID", width: 150 },
+  {
+    field: "user",
+    headerName: "Name",
+    width: 230,
+    renderCell: (params) => {
+      return <div className="cellWithImg">{params.row.username}</div>;
+    },
+  },
+  // {
+  //   field: "email",
+  //   headerName: "Email",
+  //   width: 230,
+  // },
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+  {
+    field: "age",
+    headerName: "No of Devices",
+    width: 150,
+  },
+];
+
+const DatatableVendors = () => {
+  const [Vendors, setVendors] = useState([]);
+
+  // const handleDelete = (id) => {
+  //   setData(data.filter((item) => item.id !== id));
+  // };
 
   const actionColumn = [
     {
@@ -36,7 +59,7 @@ const DatatableVendors = () => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={data}
+        rows={Vendors}
         columns={VendorColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}

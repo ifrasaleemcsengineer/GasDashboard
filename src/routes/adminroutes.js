@@ -1,5 +1,6 @@
 import React from "react";
 import Users from "../admin/pages/list/Users";
+import Devices from "../admin/pages/list/Devices";
 import MyAccountDetails from "../admin/pages/MyAccount/MyAccountDetails";
 import PrivacyPolicy from "../admin/pages/settingsInfo/PrivacyPolicy";
 import TermsConditions from "../admin/pages/settingsInfo/Terms&Conditions";
@@ -12,12 +13,14 @@ import HistroyUsers from "../admin/components/datatable/HistorytableUsers";
 import Invoice from "../admin/pages/invoice/invoice";
 import Home from "../admin/pages/home/Home";
 import Vendors from "../admin/pages/list/Vendors";
-import New from "../admin/pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { vendorsInputs, vendorsUpdate } from "../admin/formSource";
 import ContactForm from "../admin/pages/contact/ContactForm";
 import SingleUser from "../admin/pages/single/SingleUser";
 import SingleVendor from "../admin/pages/single/SingleVendor";
+import NewVendor from "../admin/pages/new/NewVendor";
+import NewDevice from "../admin/pages/new/NewDevice";
+import UpdateVendor from "../admin/pages/update/UpdateVendor";
+import UpdateDevice from "../admin/pages/update/UpdateDevices";
 
 function Adminroutes() {
   return (
@@ -32,11 +35,23 @@ function Adminroutes() {
               <Route path=":vendorId" element={<SingleVendor />} />
               <Route
                 path="new"
-                element={<New inputs={vendorsInputs} title="Add New Vendors" />}
+                element={<NewVendor  title="Add New Vendor" />}
               />
               <Route
                 path="update"
-                element={<New inputs={vendorsUpdate} title="Update Vendors" />}
+                element={<UpdateVendor  title="Update Vendor" />}
+              />
+            </Route>
+            <Route path="devices">
+              <Route index element={<Devices />} />
+              <Route path=":deviceId" element={<SingleVendor />} />
+              <Route
+                path="new"
+                element={<NewDevice  title="Add New Device" />}
+              />
+              <Route
+                path="update"
+                element={<UpdateDevice  title="Update Device" />}
               />
             </Route>
 

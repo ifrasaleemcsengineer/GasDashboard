@@ -2,12 +2,30 @@ import "../list/list.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import { DataGrid } from "@mui/x-data-grid";
-import { VendorHistoryColumns, VendorHistoryRows } from "../../historydata";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const VendorsHistory = () => {
-  const [data, setData] = useState(VendorHistoryRows);
+  const [data, setData] = useState([]);
+
+   const VendorHistoryColumns = [
+    { field: "id", headerName: "VendorID", width: 190 },
+    {
+      field: "user",
+      headerName: "Name",
+      width: 280,
+      renderCell: (params) => {
+        return <div className="cellWithImg">{params.row.username}</div>;
+      },
+    },
+    
+  
+    {
+      field: "age",
+      headerName: "No of Devices",
+      width: 250,
+    },
+  ];
 
   const actionColumn = [
     {

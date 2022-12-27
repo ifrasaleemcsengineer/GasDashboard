@@ -1,15 +1,38 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { VendorhistoryColumns, VendorhistoryRows } from "../../historytablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const HistoryVendors = () => {
-  const [data, setData] = useState(VendorhistoryRows);
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+const VendorhistoryColumns = [
+  { field: "id", headerName: "VendorID", width: 150 },
+  { field: "Adminid", headerName: "AdminID", width: 150 },
+  {
+    field: "user",
+    headerName: "Name",
+    width: 230,
+    renderCell: (params) => {
+      return <div className="cellWithImg">{params.row.username}</div>;
+    },
+  },
+  // {
+  //   field: "email",
+  //   headerName: "Email",
+  //   width: 230,
+  // },
+
+  {
+    field: "age",
+    headerName: "No of Devices",
+    width: 150,
+  },
+];
+const HistoryVendors = () => {
+  const [vendorHistory, setvendorHistory] = useState([]);
+
+  // const handleDelete = (id) => {
+  //   setData(data.filter((item) => item.id !== id));
+  // };
 
   const actionColumn = [
     {
@@ -24,7 +47,7 @@ const HistoryVendors = () => {
             </Link>
             <div
               className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
+              // onClick={() => handleDelete(params.row.id)}
             >
               Delete
             </div>
@@ -41,7 +64,7 @@ const HistoryVendors = () => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={data}
+        rows={vendorHistory}
         columns={VendorhistoryColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}

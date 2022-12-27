@@ -1,7 +1,10 @@
 import Chart from "react-apexcharts";
-import React from "react";
+import React, { useState } from "react";
 import "./PieChart.css";
 function Piechart() {
+  const [Admins, setAdmins] = useState(20)
+  const [Vendors, setVendors] = useState(20)
+  const [Users, setUsers] = useState(20)
   return (
     <React.Fragment>
       <div className="column-chart">
@@ -11,10 +14,10 @@ function Piechart() {
           type="pie"
           width={500}
           height={550}
-          series={[20, 30, 50]}
+          series={[Admins, Vendors, Users]}
           options={{
             colors:["#F0E68C","#FFFF00","#FFA500"],
-            labels: ["Vendors", "Users", "Devices"],
+            labels: ["Admins", "Vendors", "Users"],
           }}
         ></Chart>
       </div>

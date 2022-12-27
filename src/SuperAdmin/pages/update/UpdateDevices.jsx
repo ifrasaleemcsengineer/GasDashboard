@@ -1,9 +1,9 @@
-import "./new.scss";
-import Sidebar from "../../components/supersidebar/Sidebar";
+import "./update.scss";
 import Navbar from "../../components/navbar/Navbar";
 import { useState } from "react";
+import Sidebar from "../../components/supersidebar/Sidebar";
 
-const New = ({ title }) => {
+const UpdateDevice = ({ title }) => {
   const [setFile] = useState("");
 
   return (
@@ -26,19 +26,17 @@ const New = ({ title }) => {
                 />
               </div>
 
-             
-                <div className="formInputs" >
-                  <label>Name</label>
-                  <input type="text" placeholder="Ifra" />
-                  <label style={{marginTop: "50px"}}className="labels">Password</label>
-                  <input type="email" placeholder="123" />
-                  <label style={{marginTop: "50px"}}className="labels">No of Devices</label>
-                  <input type="number" placeholder="22" />
-                  {/* <label className="labels">DeiveId</label>
+              <div className="formInput">
+                <label>Name</label>
+                <input type="text" placeholder="Ifra" />
+                <label className="labels">Password</label>
+                <input type="email" placeholder="123" />
+                <label className="labels">No of Devices</label>
+                <input type="number" placeholder="22" />
+                {/* <label className="labels">DeiveId</label>
                   <input type="text" placeholder="1212234" multiple/> */}
-             
-              <button style={{marginTop: "30px" , marginLeft:"150px"}}className="createButton">Create</button>
-                </div>
+                <button className="createButton">Update</button>
+              </div>
             </form>
           </div>
         </div>
@@ -47,4 +45,4 @@ const New = ({ title }) => {
   );
 };
 
-export default New;
+export default UpdateDevice;

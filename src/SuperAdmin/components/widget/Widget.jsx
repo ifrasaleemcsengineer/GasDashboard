@@ -4,12 +4,16 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import { useState } from "react";
 
 const Widget = ({ type }) => {
   let data;
+  const [adminAmount, setadminAmount] = useState(200)
+  const [vendorAmount, setvendorAmount] = useState(100)
+  const [userAmount, setuserAmount] = useState(50)
 
   //temporary
-  const amount = 100;
+ 
   // const diff = 20;
 
   switch (type) {
@@ -17,6 +21,7 @@ const Widget = ({ type }) => {
       data = {
         title: "ADMINS",
         isMoney: false,
+        amount: adminAmount
         // link: "See all users",
         // icon: (
         //   <PersonOutlinedIcon
@@ -33,6 +38,7 @@ const Widget = ({ type }) => {
       data = {
         title: "VENDORS",
         isMoney: false,
+        amount: vendorAmount
         // link: "View all orders",
         // icon: (
         //   <ShoppingCartOutlinedIcon
@@ -49,6 +55,7 @@ const Widget = ({ type }) => {
       data = {
         title: "USERS",
         isMoney: false,
+        amount: userAmount
         // link: "View net earnings",
       //   icon: (
       //     <MonetizationOnOutlinedIcon
@@ -83,17 +90,13 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+        {data.amount}
+           {/* {adminAmount} */}
         </span>
-        <span className="link">{data.link}</span>
+        
+        
       </div>
-      <div className="right">
-        <div className="percentage positive">
-          {/* <KeyboardArrowUpIcon /> */}
-          {/* {diff} % */}
-        </div>
-        {data.icon}
-      </div>
+      
     </div>
   );
 };

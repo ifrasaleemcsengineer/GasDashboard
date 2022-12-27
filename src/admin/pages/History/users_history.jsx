@@ -1,14 +1,31 @@
 import "../list/list.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import HistoryUsers from "../../components/datatable/HistorytableUsers";
 import { DataGrid } from "@mui/x-data-grid";
-import { userHistoryColumn, userHistoryRows } from "../../historydata";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const UsersHistory = () => {
-  const [data, setData] = useState(userHistoryRows);
+  const [data, setData] = useState([]);
+
+   const userHistoryColumn = [
+    { field: "id", headerName: "UserID", width: 190 },
+    { field: "vendorid", headerName: "VendorID", width: 190 },
+    {
+      field: "user",
+      headerName: "Name",
+      width: 250,
+      renderCell: (params) => {
+        return <div className="cellWithImg">{params.row.username}</div>;
+      },
+    },
+   
+    {
+      field: "age",
+      headerName: "No of Devices",
+      width: 150,
+    },
+  ];
 
   const actionColumn = [
     {

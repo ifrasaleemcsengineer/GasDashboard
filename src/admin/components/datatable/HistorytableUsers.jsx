@@ -7,55 +7,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Sidebar from "../sidebar/Sidebar";
 import Navbar from "../navbar/Navbar";
+import { useState } from "react";
 
 const HistroyUsers = () => {
-  const rows = [
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-    {
-      deviceId: 2342355,
-      name: "ASUS ROG Strix",
-      noOfDevices: "66",
-      weight: "5",
-      amount: 2000,
-      date: "2/4/22",
-      status: "Pending",
-    },
-  ];
+  const [usersHistory, setUsersHistory] = useState([]);
+
   return (
     <div className="home">
       <Sidebar />
@@ -76,7 +32,7 @@ const HistroyUsers = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {usersHistory.map((row) => (
                 <TableRow key={row.deviceId}>
                   <TableCell className="tableCell">{row.deviceId}</TableCell>
                   <TableCell className="tableCell">{row.name}</TableCell>
