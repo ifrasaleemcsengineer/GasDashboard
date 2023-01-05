@@ -24,7 +24,8 @@ import SingleUser from "../SuperAdmin/pages/single/SingleUser";
 import SingleAdmin from "../SuperAdmin/pages/single/SingleAdmin";
 import UpdateAdmin from "../SuperAdmin/pages/update/UpdateAdmin";
 import UpdateDevice from "../SuperAdmin/pages/update/UpdateDevices";
-import NewDevice from "../SuperAdmin/pages/new/newDevice"
+import NewDevice from "../SuperAdmin/pages/new/newDevice";
+import AssignDevices from "../SuperAdmin/pages/AssignDevices/assignDevice"
 function Superadminroutes() {
 //   const { darkMode } = useContext(DarkModeContext);
 
@@ -50,6 +51,11 @@ function Superadminroutes() {
               <Route
                 path="update"
                 element={<UpdateAdmin title="Update Admin" />}
+              />
+              <Route path=":adminId" element={<AssignDevices />} />
+              <Route
+                path="assign"
+                element={<AssignDevices />}
               />
               
             </Route>

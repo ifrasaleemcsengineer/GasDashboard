@@ -21,6 +21,8 @@ import NewVendor from "../admin/pages/new/NewVendor";
 import NewDevice from "../admin/pages/new/NewDevice";
 import UpdateVendor from "../admin/pages/update/UpdateVendor";
 import UpdateDevice from "../admin/pages/update/UpdateDevices";
+import AssignDevices from "../admin/pages/AssignDevices/assignDevice"
+
 
 function Adminroutes() {
   return (
@@ -41,6 +43,13 @@ function Adminroutes() {
                 path="update"
                 element={<UpdateVendor  title="Update Vendor" />}
               />
+           
+            <Route path=":adminId" element={<AssignDevices />} />
+              <Route
+                path="assign"
+                element={<AssignDevices />}
+              />
+              
             </Route>
             <Route path="devices">
               <Route index element={<Devices />} />

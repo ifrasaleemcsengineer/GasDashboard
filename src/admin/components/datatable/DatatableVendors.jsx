@@ -27,6 +27,15 @@ const DatatableVendors = () => {
       width: 200,
     },
   ];
+   const userRows = [
+    {
+      id: 1,  
+      user: "Snow",
+      // img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+     
+      age: 35,
+    },
+  ];
 
   const actionColumn = [
     {
@@ -36,6 +45,9 @@ const DatatableVendors = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
+            <Link to="/vendors/assign" style={{ textDecoration: "none" }}>
+              <div className="viewButton">Assign Devices</div>
+              </Link>
             <Link to="/vendors/view-more" style={{ textDecoration: "none" }}>
               <div className="viewButton">View More</div>
             </Link>
@@ -63,7 +75,7 @@ const DatatableVendors = () => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={vendors}
+        rows={userRows}
         columns={vendorColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}

@@ -20,6 +20,15 @@ const AdminColumns = [
     width: 150,
   },
 ];
+export const userRows = [
+  {
+    id: 1,  
+    user: "Snow",
+    // img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+   
+    age: 35,
+  },
+];
 
 const DatatableAdmins = () => {
   const [Admins, setAdmins] = useState([]);
@@ -35,8 +44,11 @@ const DatatableAdmins = () => {
       width: 350,
       renderCell: (params) => {
         return (
-          
           <div className="cellAction">
+            <Link to="/admin/assign" style={{ textDecoration: "none" }}>
+              <div className="viewButton">Assign Devices</div>
+              </Link>
+          
             <Link to="/admin/update" style={{ textDecoration: "none" }}>
               <div className="viewButton">Update</div>
             </Link>
@@ -66,7 +78,7 @@ const DatatableAdmins = () => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={Admins}
+        rows={userRows}
         columns={AdminColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
