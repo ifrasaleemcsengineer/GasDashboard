@@ -60,7 +60,7 @@ const AssignDevices = ({ title }) => {
     </div>
           <div className="input">
           <label>Amount</label>
-          <input type="number" placeholder="22" />
+          <input type="number" />
           <button className="assign">Assign</button>
           </div>
        
