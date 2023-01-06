@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "../SuperAdmin/pages/home/Home";
-import Login from "../Login/Login";
+import Login from "../SuperAdmin/Login/Login";
 import Admins from "../SuperAdmin/pages/list/Admin";
 import New from "../SuperAdmin/pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -35,7 +35,7 @@ function Superadminroutes() {
         <Routes>
           <Route path="/">
             <Route path="/" element={<Home />} />
-            <Route path="login" element={<Login />} />
+            <Route path="SuperAdminlogin" element={<Login />} />
 
             <Route path="admin">
               <Route index element={<Admins />} />
