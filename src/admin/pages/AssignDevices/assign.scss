@@ -47,8 +47,8 @@
   input[type="checkbox"] {  
     transition: box-shadow .3s;
     background: lightgrey;
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     margin-top: 20px;
 
     &:checked { 
@@ -59,12 +59,15 @@
     font-weight: bolder;
     margin-right: 30px;
   }
-  .assign{
+  .assigned{
     margin-top: 30px;
     margin-left:50px;
     width:90px;
     height: 45px;
     border-radius: 3px;
+    cursor: pointer;
+    background-color: orange;
+    
   }
   .main{
     margin: auto;
@@ -91,9 +94,9 @@
     border: 1px solid rgb(194, 194, 194);
     width: 300px;
     padding: 20px;
-    padding-top:5px;
+    padding-top:2px;
     overflow-y:scroll;
-    height: 200px;
+    height: 180px;
 
   }
   .checked-item,

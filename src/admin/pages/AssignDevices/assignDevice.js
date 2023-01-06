@@ -54,7 +54,7 @@ const AssignDevices = ({ title }) => {
           {checkList.map((item, index) => (
             <div key={index}>
               
-              <input value={item} type="checkbox" onChange={handleCheck} />
+              <input value={item} type="checkbox" onChange={handleCheck} required/>
               <span className={isChecked(item)}>{item}</span>
             </div>
           ))}
@@ -66,8 +66,8 @@ const AssignDevices = ({ title }) => {
       </div>
     </div>
           <div className="input">
-          <input type="number" value={price} onChange={(e) => setPrice(e.target.value)}  placeholder="Enter Price"/>
-          <button className="assign" onClick={onChange}>Assign</button>
+          <input type="number" value={price} onChange={(e) => setPrice(e.target.value)}  placeholder="Enter Price" required/>
+          <button style={{outlineColor: "orange"}}className="assigned" onClick={onChange}>Assign</button>
           <p style={{fontWeight: "bolder",fontSize: "15px"}}>Total Price:  {totalValue}</p>
           </div>
        
