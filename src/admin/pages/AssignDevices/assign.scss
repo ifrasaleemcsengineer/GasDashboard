@@ -39,7 +39,21 @@
   .input{
     float: center;
     margin-left:40px;
+    margin: auto;
+    align-items: center;
+    width: 30%;
    
+  }
+  input[type="checkbox"] {  
+    transition: box-shadow .3s;
+    background: lightgrey;
+    height: 20px;
+    width: 20px;
+    margin-top: 20px;
+
+    &:checked { 
+      box-shadow: inset 0 0 0 20px orange;
+    }
   }
   label{
     font-weight: bolder;
@@ -49,10 +63,14 @@
     margin-top: 30px;
     margin-left:50px;
     width:90px;
-    border-radius: 5px;
+    height: 45px;
+    border-radius: 3px;
   }
   .main{
-    margin-left: 40px;
+    margin: auto;
+    align-items: center;
+    width: 30%;
+    
   }
 
   .items{
@@ -60,10 +78,13 @@
     
 
   }
-  .title {
+  .title-device {
     font-size: 22px;
     margin-bottom: 10px;
     font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    margin-left: 110px;
   }
   .list-container {
     gap: 10px;
@@ -72,14 +93,16 @@
     padding: 20px;
     padding-top:5px;
     overflow-y:scroll;
-    height: 180px;
+    height: 200px;
 
   }
   .checked-item,
   .not-checked-item {
     margin-left: 10px;
+    
   }
-  .checked-item {
-    text-decoration: line-through;
+  span{
+    margin-left: 10px;
+    
   }
-  
+ 
