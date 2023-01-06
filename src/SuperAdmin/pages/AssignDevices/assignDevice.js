@@ -6,6 +6,8 @@ import Sidebar from "../../components/supersidebar/Sidebar";
 const AssignDevices = ({ title }) => {
     
       const [checked, setChecked] = useState([]);
+      const [price, setPrice] = useState([]);
+      const [totalValue, setValue] = useState();
       const checkList = ["001", "002", "003", "004","004","004","004","004"];
 
       const handleCheck = (event) => {
@@ -24,6 +26,10 @@ const AssignDevices = ({ title }) => {
         return total + ", " + item;
       })
     : "";
+    const onChange = () => {
+      setValue(checked.length * parseInt(price));
+      
+    };
 
   // Return classes based on whether item is checked
   var isChecked = (item) =>
@@ -49,7 +55,7 @@ const AssignDevices = ({ title }) => {
             <div key={index}>
               
               <input value={item} type="checkbox" onChange={handleCheck} />
-              <span>{item}</span>
+              <span className={isChecked(item)}>{item}</span>
             </div>
           ))}
         </div>
@@ -60,8 +66,9 @@ const AssignDevices = ({ title }) => {
       </div>
     </div>
           <div className="input">
-          <input type="number" placeholder="Enter Price"/>
-          <button className="assign">Assign</button>
+          <input type="number" value={price} onChange={(e) => setPrice(e.target.value)}  placeholder="Enter Price"/>
+          <button className="assign" onClick={onChange}>Assign</button>
+          <p style={{fontWeight: "bolder",fontSize: "15px"}}>Total Price:  {totalValue}</p>
           </div>
        
     </div>
