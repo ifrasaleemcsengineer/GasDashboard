@@ -47,7 +47,7 @@ const Sidebar = () => {
               <span>Devices</span>
             </li>
           </Link>
-          <Link to="/invoice" style={{ textDecoration: "none" }}>
+          <Link to="/invoice_table" style={{ textDecoration: "none" }}>
             <li>
               <ReceiptIcon className="icon" />
               <span>Invoice</span>
@@ -59,7 +59,7 @@ const Sidebar = () => {
               <span>Payment Requests</span>
             </li>
           </Link>
-          <p className="title">HISTORY</p>
+          {/* <p className="title">HISTORY</p>
           <Link to="/vendors-history" style={{ textDecoration: "none" }}>
             <li>
               <HistoryIcon className="icon" />
@@ -77,7 +77,7 @@ const Sidebar = () => {
               <HistoryIcon className="icon" />
               <span>My History</span>
             </li>
-          </Link>
+          </Link> */}
           <p className="title">SETTINGS</p>
           <Link to="/my-account" style={{ textDecoration: "none" }}>
             <li>

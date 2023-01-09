@@ -10,7 +10,7 @@ import MyHistory from "../admin/pages/History/my_history";
 import PaymentRequest from "../admin/pages/payment-req/Payment-Request";
 import HistroyVendors from "../admin/components/datatable/HistorytableVendors";
 import HistroyUsers from "../admin/components/datatable/HistorytableUsers";
-import Invoice from "../admin/pages/invoice/invoice";
+import InvoiceTable from "../admin/pages/invoice/invoice_table";
 import Home from "../admin/pages/home/Home";
 import Vendors from "../admin/pages/list/Vendors";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -21,8 +21,9 @@ import NewVendor from "../admin/pages/new/NewVendor";
 import NewDevice from "../admin/pages/new/NewDevice";
 import UpdateVendor from "../admin/pages/update/UpdateVendor";
 import UpdateDevice from "../admin/pages/update/UpdateDevices";
-import AssignDevices from "../admin/pages/AssignDevices/assignDevice"
-import Login from "../admin/Login/Login"
+import AssignDevices from "../admin/pages/AssignDevices/assignDevice";
+import Login from "../admin/Login/Login";
+import Invoice from "../admin/pages/invoice/invoice";
 
 function Adminroutes() {
   return (
@@ -68,7 +69,7 @@ function Adminroutes() {
               <Route index element={<Users />} />
               <Route path=":userId" element={<SingleUser />} />
             </Route>
-            <Route path="vendors_history">
+            {/* <Route path="vendors_history">
               <Route index element={<VendorsHistory />} />
               <Route path=":vendorId" element={<HistroyVendors />} />
             </Route>
@@ -82,21 +83,25 @@ function Adminroutes() {
 
             <Route path="users-history">
               <Route index element={<UsersHistory />} />
-            </Route>
+            </Route> */}
             <Route path="contact-us">
               <Route index element={<ContactForm />} />
             </Route>
-            <Route path="my-history">
+            {/* <Route path="my-history">
               <Route index element={<MyHistory />} />
-            </Route>
+            </Route> */}
             <Route path="payment-requests">
               <Route index element={<PaymentRequest />} />
             </Route>
             <Route path="my-account">
               <Route index element={<MyAccountDetails />} />
             </Route>
-            <Route path="invoice">
-              <Route index element={<Invoice />} />
+            <Route path="invoice_table">
+              <Route index element={<InvoiceTable />} />
+              <Route
+                path="invoice"
+                element={<Invoice />}
+              />
             </Route>
             <Route path="privacy-policy">
               <Route index element={<PrivacyPolicy />} />

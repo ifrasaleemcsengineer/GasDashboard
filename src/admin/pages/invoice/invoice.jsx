@@ -1,5 +1,5 @@
 import React from "react";
-import "./invoice.css";
+import "./invoice.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Popup from "./popup";
@@ -37,53 +37,53 @@ const Invoice = () => {
 
           <div className="sender">
             <p>Name</p>
-            <p>Address</p>
-            <p>Phone number</p>
+            <p>ID</p>
+            {/* <p>Phone number</p> */}
           </div>
           <div className="info-print">
             <div className="receiver">
               <h1>Client Information:</h1>
               <p>Name</p>
-              <p>Address</p>
-              <p>Phone number</p>
+              <p>ID</p>
+              {/* <p>Phone number</p>  */}
             </div>
 
             <div className="order-info">
               <h1>Order Information:</h1>
               <p>Issue Date: </p>
-              <p>Due Date: </p>
+              {/* <p>Due Date: </p> */}
               <p>Status: </p>
               <p>ID: </p>
             </div>
 
             <div className="ivoice-info">
-              <h1>Invoice Number:</h1>
-              <p>Total Due: </p>
-            </div>
+              <h1>Invoice # 01</h1>
+             
           </div>
 
           <div className="invoice-table">
             <table className="after-print">
               <tr className="after-print-head">
                 <th>Device ID</th>
-                <th>Quantity</th>
+                {/* <th>Quantity</th> */}
                 <th>Amount</th>
               </tr>
               {data.map((val, key) => {
                 return (
                   <tr key={key}>
                     <td>{val.ID}</td>
-                    <td>{val.Quantity}</td>
+                    {/* <td>{val.Quantity}</td> */}
                     <td>{val.Amount}</td>
                   </tr>
                 );
               })}
             </table>
             <div className="total">
+              <div className = "total-print">
               <div className="total-body">
                 <p>Sub Total:</p>
-                <p>Discount:</p>
-                <p>Previous weight:</p>
+                {/* <p>Discount:</p>
+                <p>Previous weight:</p> */}
                 <div className="borders"></div>
                 <p
                   style={{
@@ -94,6 +94,7 @@ const Invoice = () => {
                 >
                   Total:
                 </p>
+                </div>
               </div>
             </div>
 
@@ -131,6 +132,7 @@ const Invoice = () => {
           <button className="label_invoice">Upload Snapshot</button>
         </Popup>
       </div>
+    </div>
     </div>
   );
 };

@@ -68,7 +68,7 @@ const Sidebar = () => {
             </li>
             </Link>
           
-          <p className="title">HISTORY</p>
+          {/* <p className="title">HISTORY</p>
           <Link to="/admins_history" style={{ textDecoration: "none" }}>
             <li>
               <HistoryIcon className="icon"/>
@@ -86,7 +86,7 @@ const Sidebar = () => {
             <HistoryIcon className="icon"/>
               <span>Users</span>
             </li>
-          </Link>
+          </Link> */}
          
           <p className="title">SETTINGS</p>
           <Link to="/Myaccount" style={{ textDecoration: "none" }}>

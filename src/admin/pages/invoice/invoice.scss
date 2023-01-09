@@ -80,7 +80,7 @@ td{
     float: right;
     background-color: rgb(255, 205, 111);
     width: 900px;
-    height: 110px;
+    height: 80px;
 
 
 }
@@ -112,15 +112,20 @@ td{
 	}
 
     .after-print{
-        margin-top: 80px;
+        margin-top: 20px;
         align-items: center;
-        margin-left: 5px;
+        margin-left: -85px;
         
+    }
+    .total-print{
+        margin-left: -80px;
+        margin-top: 50px;
     }
 
     .after-print-head{
         background-color: rgb(0, 0, 0);
         text-align: center;
+        margin-right: 45px;
         border-bottom: 1px solid rgb(175, 175, 175);
     }
 
@@ -174,4 +179,122 @@ input{
  
 #upload{
     background-color: white;
+}
+
+.datatable {
+  height: 620px;
+  padding: 20px;
+
+  .datatableTitleHistory {
+    width: 100%;
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .datatableTitle {
+    width: 100%;
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .link-new {
+      text-decoration: none;
+      color: white;
+      background-color: orange;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+
+    .cellImg {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+  }
+
+  .cellWithStatus {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.active {
+      background-color: rgba(0, 128, 0, 0.05);
+      color: green;
+    }
+    &.pending {
+      background-color: rgba(255, 217, 0, 0.05);
+      color: goldenrod;
+    }
+    &.passive {
+      background-color: rgba(255, 0, 0, 0.05);
+      color: crimson;
+    }
+  }
+
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .viewButton {
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      background-color: orange;
+      cursor: pointer;
+    }
+
+    .deleteButton {
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      background-color: orange;
+      cursor: pointer;
+    }
+  }
+}
+
+.table {
+  margin-top: 20px;
+  .cellWrapper {
+    display: flex;
+    align-items: center;
+
+    .image {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+  }
+
+  .status {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.Approved {
+      color: green;
+      background-color: rgba(0, 128, 0, 0.151);
+    }
+    &.Pending {
+      color: goldenrod;
+      background-color: rgba(189, 189, 3, 0.103);
+    }
+  }
 }

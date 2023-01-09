@@ -110,7 +110,7 @@ function Superadminroutes() {
               />
             </Route>
            
-            <Route path="admins_history">
+            {/* <Route path="admins_history">
               <Route index element={<AdminsHistory />} />
                <Route path=":userId" element={<AdminHistory />} /> 
               
@@ -124,7 +124,7 @@ function Superadminroutes() {
               <Route index element={<UsersHistory />} />
               <Route path=":userId" element={<UserHistory />} /> 
               
-            </Route>
+            </Route> */}
             {/* <Route path="invoice">
               <Route index element={<Invoice />} /> */}
                {/* <Route path=":userId" element={<SingleHistory />} />  */}
