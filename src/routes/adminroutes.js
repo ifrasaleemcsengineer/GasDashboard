@@ -22,7 +22,7 @@ import NewDevice from "../admin/pages/new/NewDevice";
 import UpdateVendor from "../admin/pages/update/UpdateVendor";
 import UpdateDevice from "../admin/pages/update/UpdateDevices";
 import AssignDevices from "../admin/pages/AssignDevices/assignDevice";
-import Login from "../admin/Login/Login";
+import AdminLogin from "../admin/Login/Login";
 import Invoice from "../admin/pages/invoice/invoice";
 
 function Adminroutes() {
@@ -32,7 +32,7 @@ function Adminroutes() {
         <Routes>
           <Route path="/">
             <Route path="/admindashboard" element={<Home />} />
-            <Route path="/Login" element={<Login />} />
+            <Route path="/AdminLogin" element={<AdminLogin />} />
             <Route path="vendors">
               <Route index element={<Vendors />} />
               <Route path=":vendorId" element={<SingleVendor />} />

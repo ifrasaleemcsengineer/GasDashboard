@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./login.css";
 import logo from "./logo.png";
  
-function Login() {
+function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,7 +28,7 @@ function Login() {
               <div class="col-md-7">
                 <h2 class="login-head">
                   <center>
-                    <strong>Login</strong>
+                    <strong>Admin Login</strong>
                   </center>
                 </h2>
                 <form action="#" method="post">
@@ -73,4 +73,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default AdminLogin;

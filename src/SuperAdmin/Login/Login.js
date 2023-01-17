@@ -28,7 +28,7 @@ function Login() {
               <div class="col-md-7">
                 <h2 class="login-head">
                   <center>
-                    <strong>Login</strong>
+                    <strong>Super Admin Login</strong>
                   </center>
                 </h2>
                 <form action="#" method="post">
