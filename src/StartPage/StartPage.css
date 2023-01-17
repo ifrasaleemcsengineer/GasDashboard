@@ -6,8 +6,7 @@
     width: 40%;
     height: auto;
     padding: 20px 0px;
-    align-items: center;
-    
+    align-items: center;   
     font-size: 24px;
     color: gray;
     margin-left: 390px;
@@ -26,4 +25,22 @@
   }
   .block-inner{
     margin-bottom: 50px;
+  }
+
+  .heading{
+    margin-bottom: 25px;
+    margin-left: 40px; 
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .logo{
+    height: 210px;
+    width: 230px;
+    margin-left: 40px;
+    margin-top: 30px;
+
+  }
+
+  buttons{
+    
   }
