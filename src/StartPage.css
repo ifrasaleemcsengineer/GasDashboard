@@ -1,0 +1,29 @@
+
+.block {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 4px 6px rgb(238, 235, 235);
+    width: 40%;
+    height: auto;
+    padding: 20px 0px;
+    align-items: center;
+    
+    font-size: 24px;
+    color: gray;
+    margin-left: 390px;
+    margin-top: 120px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button-login {
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    color: white;
+    border-radius: 0px;
+    width: 20px;
+  }
+  .block-inner{
+    margin-bottom: 50px;
+  }
