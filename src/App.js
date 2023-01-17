@@ -1,6 +1,6 @@
 import React from "react";
 import "./style/dark.scss";
-import StartPage from "./StartPage";
+import StartPage from "./StartPage/StartPage";
 import AdminDashboard from "./Dashboards/AdminDashboard";
 import { Switch } from "react-router-dom";
 import { Route, Router, Routes } from "react-router-dom/dist";
